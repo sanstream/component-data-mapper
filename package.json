@@ -1,10 +1,19 @@
 {
   "name": "data-kraai",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A generic and flexible way to map any type of data into any type of component",
+  "keywords":[
+    "datamapping",
+    "components",
+    "data-handling"
+  ],
   "main": "main.js",
   "repository": "git@github.com:sanstream/data-kraai.git",
-  "author": "Sanne Peters",
+  "author": {
+    "name": "Sanne Peters",
+    "email": "sanstream@gmail.com",
+    "url": "https://sanstreamm.nl"
+  },
   "license": "DoNoHarm",
   "private": false
 }

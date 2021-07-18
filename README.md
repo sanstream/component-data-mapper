@@ -59,6 +59,7 @@ const tableDataMapping = {
   }),
   'age': new DataKraai({
     label: 'Age',
+    labelExplanation: 'The age is represented in years.' // although labelExplanation is not part of the DataKraai parameters it still allows you to pass parameters like that.
     mapper: crowDataPoint => {
       const birthDay = DateTime.fromISO(crowDataPoint.dateOfBirth)
       const now = DateTime.fromMillis(Date.now())
@@ -94,9 +95,15 @@ In each component your would in turn define how data can be extracted:
   <table>
     <thead>
       <tr>
+        <!--
+        dataMapping[id].labelExplanation is not always present aka undefined
+        vue handles this by simply not applying the title attribute,
+        is exactly the desired behaviour.
+        -->
         <th
           v-for="id in ordering"
           :key="id"
+          :title="dataMapping[id].labelExplanation"
         >
           {{dataMapping[id].label}}
         </th>

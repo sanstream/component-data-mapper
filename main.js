@@ -4,7 +4,13 @@ export default class DataKraai {
     mapper,
     dataRange,
     dataRangeLabels,
+    ...otherProps
   }) {
+    // Allow props to simply be passed along.
+    // This allows an even larger degree of flexibility.
+    Object.assign(this , {
+      ...otherProps
+    })
     this.label = label
     this.mapper = mapper
     this.dataRange = dataRange || null
